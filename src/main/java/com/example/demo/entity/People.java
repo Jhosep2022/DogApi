@@ -24,14 +24,19 @@ public class People implements Serializable {
     @Column(name = "edad")
     private String edad;
 
+    @Basic(optional = false)
+    @Column(name = "telefono")
+    private String telefono;
+
 
     public People() {
     }
 
-    public People(Integer idUsuario, String nombre, String edad) {
+    public People(Integer idUsuario, String nombre, String edad, String telefono) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.edad = edad;
+        this.telefono = telefono;
     }
 
     public Integer getIdUsuario() {
@@ -58,12 +63,21 @@ public class People implements Serializable {
         this.edad = edad;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
     @Override
     public String toString() {
-        return "people{" +
+        return "People{" +
                 "idUsuario=" + idUsuario +
                 ", nombre='" + nombre + '\'' +
                 ", edad='" + edad + '\'' +
+                ", telefono='" + telefono + '\'' +
                 '}';
     }
 }

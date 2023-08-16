@@ -22,13 +22,13 @@ public class PeopleBl {
         return PeopleRepository.save(newpeople);
     }
 
-    public List<PeopleDto> getAllPeople(){
-        List<People> peoplei = PeopleDao.getAllPeople();
-        List<PeopleDto> res = new ArrayList<>();
-        peoplei.forEach(people ->{
-            res.add(new PeopleDto(people.getIdPersona(),people.getNombre(),people.getApellido(),people.getEdad(),people.getCorreo(),people.getContrasena(),people.getTelefono(),people.getDireccion(),people.getFechaNacimiento(),people.getGenero(),people.getEstadoCivil(),people.getTipoPersona(),people.getTipoDocumento(),people.getNumeroDocumento(),people.getRol()));
-        });
-        return res;
-    }
+//    public List<PeopleDto> getAllPeople(){
+//        List<People> peoplei = PeopleDao.getAllPeople();
+//        List<PeopleDto> res = new ArrayList<>();
+//        peoplei.forEach(people ->{
+//            res.add(new PeopleDto(people.getIdPersona(),people.getNombre(),people.getApellido(),people.getEdad(),people.getCorreo(),people.getContrasena(),people.getTelefono(),people.getDireccion(),people.getFechaNacimiento(),people.getGenero(),people.getEstadoCivil(),people.getTipoPersona(),people.getTipoDocumento(),people.getNumeroDocumento(),people.getRol()));
+//        });
+//        return res;
+//    }
 
 }

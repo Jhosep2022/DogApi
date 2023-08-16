@@ -11,16 +11,5 @@ public class PeopleDao {
     @Autowired
     private com.example.demo.repository.PeopleRepository PeopleRepository;
 
-    public List<People> getAllPeople(){
-        return PeopleRepository.findAllPeople();
-    }
-
-    public People getpeopleBypeopleId(Integer peopleId){
-        return PeopleRepository.findpeopleBypeopleId(peopleId);
-    }
-
-    public People getpeopleBypeopleName(String peopleName){
-        return PeopleRepository.findpeopleBypeopleName(peopleName);
-    }
 
 }

@@ -12,15 +12,5 @@ public class DogsDao {
     @Autowired
     private DogRepository DogsRepository;
 
-    public List<Dog> getAllDogs(){
-        return DogsRepository.findAllDogs();
-    }
 
-    public Dog getdogsBydogsId(Integer dogsId){
-        return DogsRepository.finddogsBydogsId(dogsId);
-    }
-
-    public Dog getdogsBydogsName(String dogsName){
-        return DogsRepository.finddogsBydogsName(dogsName);
-    }
 }

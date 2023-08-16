@@ -7,10 +7,5 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface DogRepository extends JpaRepository<Dog, Long> {
-    @Query(value = "SELECT * FROM dogs WHERE status = true", nativeQuery = true)
-    List<Dog> findAllDogs();
 
-    Dog finddogsBydogsId(Integer dogsId);
-
-    Dog finddogsBydogsName(String dogsName);
 }
