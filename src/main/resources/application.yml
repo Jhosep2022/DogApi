@@ -21,4 +21,6 @@ spring:
           auth: false
           starttls:
             enable: false
+dogApi:
+  url: https://dog.ceo/api/breeds/image/random
 

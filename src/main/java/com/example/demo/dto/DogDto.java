@@ -3,25 +3,25 @@ import java.io.Serializable;
 
 public class DogDto implements Serializable {
 
-    private Long idMascotas;
+    private Long id_dogs;
     private String message;
     private String status;
 
     public DogDto() {
     }
 
-    public DogDto(Long idMascotas, String message, String status) {
-        this.idMascotas = idMascotas;
+    public DogDto(Long id_dogs, String message, String status) {
+        this.id_dogs = id_dogs;
         this.message = message;
         this.status = status;
     }
 
     public Long getIdMascotas() {
-        return idMascotas;
+        return id_dogs;
     }
 
     public void setIdMascotas(Long idMascotas) {
-        this.idMascotas = idMascotas;
+        this.id_dogs = idMascotas;
     }
 
     public String getMessage() {
@@ -43,7 +43,7 @@ public class DogDto implements Serializable {
     @Override
     public String toString() {
         return "DogDto{" +
-                "idMascotas=" + idMascotas +
+                "id_dogs=" + id_dogs +
                 ", message='" + message + '\'' +
                 ", status='" + status + '\'' +
                 '}';
