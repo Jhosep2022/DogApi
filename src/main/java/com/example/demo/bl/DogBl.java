@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -14,6 +17,7 @@ import org.springframework.http.HttpStatus;
 
 @Service
 public class DogBl {
+
     private static final Logger logger = LoggerFactory.getLogger(DogBl.class);
 
     @Autowired
@@ -43,5 +47,17 @@ public class DogBl {
             logger.warn("Fallo al recuperar datos del perro desde la API. Código de respuesta: {}", response.getStatusCodeValue());
             throw new RuntimeException("Error al consumir la API de perros");
         }
+    }
+
+    /**
+     * Obtiene una página de perros de la base de datos.
+     *
+     * @param pageNumber El número de página.
+     * @param pageSize   El tamaño de la página.
+     * @return una página de perros.
+     */
+    public Page<Dog> findAllDogs(int pageNumber, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        return dogRepository.findAll(pageable);
     }
 }
