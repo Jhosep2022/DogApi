@@ -1,1 +1,3 @@
 http://localhost:8080/api/dogs/fetch
+
+http://localhost:8080/api/dogs/list

@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/ArquiDogs
-    username: postgres
-    password: jose
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/ArquiDogs}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:jose}
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -23,4 +23,3 @@ spring:
             enable: false
 dogApi:
   url: https://dog.ceo/api/breeds/image/random
-
