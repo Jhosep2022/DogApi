@@ -50,4 +50,20 @@ public class Dogs_Api {
             return new ResponseEntity<>(new ResponseDto<>(500, "Error Interno del Servidor"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    //update
+//    @GetMapping("/list/update")
+//    public ResponseEntity<ResponseDto<Page<Dog>>> listDogsUpdate(
+//            @RequestParam(value = "page", defaultValue = "0") int page,
+//            @RequestParam(value = "size", defaultValue = "10") int size) {
+//        try {
+//            logger.info("Iniciando el proceso para obtener una lista paginada de perros.");
+//            Page<Dog> dogs = dogBl.findAllDogs(page, size);
+//            return new ResponseEntity<>(new ResponseDto<>(200, dogs, "Lista de perros"), HttpStatus.OK);
+//
+//        } catch (Exception e) {
+//            logger.error("Error al procesar la petición /list: ", e.getMessage());
+//            return new ResponseEntity<>(new ResponseDto<>(500, "Error Interno del Servidor"), HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 }
