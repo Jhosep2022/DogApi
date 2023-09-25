@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "dogs", catalog = "ArquiDogs", schema = "public")
+@Table(name = "dogs", catalog = "arquidogs", schema = "public")
 @NamedQueries({
         @NamedQuery(name = "dogs.findAll", query = "SELECT d FROM Dog d"),
 })

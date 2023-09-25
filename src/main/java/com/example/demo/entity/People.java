@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "usuario", catalog = "ArquiDogs", schema = "public")
+@Table(name = "usuario", catalog = "arquidogs", schema = "public")
 public class People implements Serializable {
 
     private static final long serialVersionUID = 1L;

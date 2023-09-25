@@ -1,17 +1,20 @@
 server:
-  port: ${PORT:7070}
+  port: ${PORT:8080}
 
 spring:
+  application:
+    name: arqui-dogs
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5433/ArquiDogs}
+    type: org.postgresql.jdbc2.optional.SimpleDataSource
     username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:jose}
-    driver-class-name: org.postgresql.Driver
+    password: ${DB_PASSWORD:mysecretpassword}
+    url: ${DB_URL:jdbc:postgresql://localhost:5431/arquidogs}
+#    driver-class-name: org.postgresql.Driver
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#      database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    show-sql: true
+#      show-sql: true
   mail:
     host: localhost
     port: 1025
@@ -21,5 +24,21 @@ spring:
           auth: false
           starttls:
             enable: false
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: ${ISSUER_URI:http://localhost:8090/realms/software}
+          jwk-set-uri: ${spring.security.oauth2.resource-server.jwt.issuer-uri}/protocol/openid-connect/certs
+
 dogApi:
   url: https://dog.ceo/api/breeds/image/random
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+token:
+  converter:
+    principal-attribute: preferred_username
+    resource-id: ${RESOURCE_ID:dog-backend}
